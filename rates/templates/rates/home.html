@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mani Jewellers</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+    <!-- Video Container (Uppermost Div) -->
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="{% static 'video.mp4' %}" type="video/mp4">
+
+        </video>
+    </div>
+
+    <!-- Content Section (Below Video) -->
+    <div class="content">
+        <div class="rates-container">
+            {% for rate in rates %}
+            <div class="rate-box">
+                <h2>{{ rate.metal_type }} </h2>
+                <p>₹{{ rate.rate }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
+
